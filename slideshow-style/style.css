@@ -118,20 +118,26 @@ header a:hover {
 	transform: translateX(-50%);
 	background-color: rgba(0, 0, 0, 0.6);
 	color: white;
-	padding: 15px 25px;
+	padding: 10px 20px; /* パディングを少し調整 */
 	border-radius: 5px;
 	text-align: center;
+	width: auto; /* 幅をコンテンツに合わせる */
+	max-width: 80%; /* 画面幅の80%を上限とする */
+	box-sizing: border-box; /* パディングとボーダーを幅に含める */
 }
 
 .slide-caption h2 {
 	font-family: "Playfair Display", serif;
 	font-size: 2em;
-	margin-bottom: 10px;
+	margin-bottom: 0; /* 説明文がなくなったためマージンを削除 */
 }
 
+/* .slide-caption p のスタイルは不要になったため削除可能ですが、コメントアウトしておきます */
+/*
 .slide-caption p {
 	font-size: 1.1em;
 }
+*/
 
 /* Next & previous buttons */
 .prev,
@@ -286,9 +292,7 @@ footer {
 	.slide-caption h2 {
 		font-size: 1.5em;
 	}
-	.slide-caption p {
-		font-size: 0.9em;
-	}
+	/* .slide-caption p (mobile) のスタイルも不要 */
 	.prev,
 	.next {
 		font-size: 16px;
@@ -304,7 +308,5 @@ footer {
 	.slide-caption h2 {
 		font-size: 1.2em;
 	}
-	.slide-caption p {
-		font-size: 0.8em;
-	}
+	/* .slide-caption p (smaller mobile) のスタイルも不要 */
 }
