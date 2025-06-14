@@ -241,4 +241,10 @@ footer {
 		/* This might be redundant if already 1fr, but ensure it for mobile */
 		grid-template-columns: 1fr;
 	}
+
+	.gallery-item {
+		border: none; /* Remove border on mobile */
+		margin-bottom: 0; /* Remove bottom margin if border is removed, or adjust as needed */
+		border-radius: 0; /* Remove border-radius if border is removed */
+	}
 }
