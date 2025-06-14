@@ -6,7 +6,7 @@
 }
 
 body {
-	font-family: "Open Sans", sans-serif;
+	font-family: "Zen Kaku Gothic New", sans-serif;
 	line-height: 1.6;
 	color: #333;
 	background-color: #f4f4f4;
@@ -45,7 +45,6 @@ header .container {
 }
 
 header h1 {
-	font-family: "Montserrat", sans-serif;
 	/* float: left; removed, using flexbox */
 	margin-top: 0; /* Adjusted due to flex align-items */
 	font-size: 1.8em; /* Keep or adjust as needed */
@@ -110,7 +109,6 @@ header a:hover {
 }
 
 #works h3 {
-	font-family: "Montserrat", sans-serif;
 	text-align: center;
 	font-size: 2em;
 	margin-bottom: 30px;
@@ -152,7 +150,6 @@ header a:hover {
 }
 
 .item-info h4 {
-	font-family: "Montserrat", sans-serif;
 	font-size: 1.1em; /* Adjusted size */
 	color: #333; /* Dark text color */
 	margin: 0; /* Reset margin, spacing handled by work-type */
