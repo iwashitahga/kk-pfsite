@@ -119,8 +119,8 @@ header a:hover {
 
 .gallery {
 	display: grid;
-	grid-template-columns: 1fr; /* Single column */
-	gap: 0; /* No gap between items */
+	grid-template-columns: repeat(3, 1fr); /* Default to 3 columns for PC */
+	gap: 20px; /* Add gap between items for PC */
 }
 
 .gallery-item {
