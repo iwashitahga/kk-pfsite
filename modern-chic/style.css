@@ -155,13 +155,16 @@ header a:hover {
 	font-family: "Montserrat", sans-serif;
 	font-size: 1.1em; /* Adjusted size */
 	color: #333; /* Dark text color */
-	margin: 0 0 5px 0; /* Reset margin, add bottom margin */
+	margin: 0; /* Reset margin, spacing handled by work-type */
 }
 
-.item-info .client {
-	font-size: 0.9em;
-	color: #777; /* Lighter text for client info */
-	display: block; /* Ensure it takes its own line if needed */
+.item-info .work-type {
+	font-size: 0.85em; /* Slightly smaller */
+	color: #555; /* Medium-dark text for work type */
+	display: block; /* Ensure it takes its own line */
+	margin-bottom: 8px; /* Space below work type, above title */
+	text-transform: uppercase; /* Optional: make it uppercase */
+	letter-spacing: 0.5px; /* Optional: add some letter spacing */
 }
 
 /* Footer */
