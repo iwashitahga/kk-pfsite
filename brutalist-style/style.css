@@ -32,20 +32,71 @@ header h1 {
     margin-bottom: 10px;
 }
 
-header nav a {
-    text-decoration: none;
+/* Navigation & Hamburger Menu */
+.nav-toggle {
+    display: none; /* Hide checkbox */
+}
+
+.nav-toggle-label {
+    display: none; /* Hidden by default, shown on mobile */
+    cursor: pointer;
+    position: absolute; /* Adjust as needed */
+    top: 30px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+    z-index: 100;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    display: block;
+    background-color: #000;
+    height: 2px;
+    width: 25px;
+    border-radius: 2px;
+    position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    content: '';
+    position: absolute;
+}
+
+.nav-toggle-label span::before {
+    bottom: 8px;
+}
+
+.nav-toggle-label span::after {
+    top: 8px;
+}
+
+
+header .main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header .main-nav li {
+    display: inline-block; /* For desktop view */
     margin: 0 10px;
+}
+
+header .main-nav a {
+    text-decoration: none;
     font-weight: 700;
     color: #000;
     border: 1px solid #000;
     padding: 5px 8px;
-    display: inline-block; /* Ensure borders wrap correctly */
+    display: inline-block;
 }
 
-header nav a:hover {
+header .main-nav a:hover {
     background-color: #000;
     color: #fff;
 }
+
 
 /* Main Content Sections */
 main section {
@@ -133,10 +184,34 @@ footer {
         font-size: 1.5em;
     }
 
-    header nav a {
-        margin: 5px;
-        padding: 3px 5px;
-        font-size: 0.9em;
+    .nav-toggle-label {
+        display: block; /* Show hamburger icon on mobile */
+    }
+
+    header .main-nav {
+        display: none; /* Hide nav by default on mobile */
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .nav-toggle:checked ~ .main-nav {
+        display: block; /* Show nav when checkbox is checked */
+    }
+
+    header .main-nav ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    header .main-nav li {
+        margin: 10px 0;
+        display: block;
+    }
+
+    header .main-nav a {
+        display: block; /* Make links full width */
+        padding: 10px;
     }
 
     main section {

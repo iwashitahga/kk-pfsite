@@ -73,6 +73,27 @@ body {
     color: #fff;
 }
 
+/* Hamburger Menu for Monotone Style */
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    display: none; /* Hidden by default, shown on mobile */
+    cursor: pointer;
+    /* Positioned within .sidebar when it becomes a row */
+}
+
+.nav-toggle-label span {
+    display: block;
+    width: 25px;
+    height: 2px; /* Thinner lines for monotone */
+    background-color: #f0f0f0; /* Light color for dark sidebar */
+    margin: 5px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+
 /* Main Content Area */
 .main-content {
     margin-left: 280px; /* Same as sidebar width */
@@ -308,18 +329,49 @@ footer p {
     }
     .sidebar .logo {
         font-size: 1.5em;
+        /* Ensure logo and toggle are spaced in flex row */
     }
-    .sidebar nav ul {
+
+    .nav-toggle-label {
+        display: block; /* Show hamburger */
+        order: 2; /* Place it after logo if nav is hidden */
+        margin-left: auto; /* Push to the right if sidebar is flex row */
+    }
+
+    .sidebar .main-nav {
+        display: none; /* Hide nav by default on mobile */
+        order: 3; /* After logo and toggle */
+        width: 100%; /* Full width for dropdown */
+        background-color: #1a1a1a; /* Match sidebar bg */
+        position: absolute; /* Position below the header-like sidebar */
+        top: 100%; /* Below the sidebar */
+        left: 0;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    
+    .nav-toggle:checked ~ .main-nav {
+        display: block; /* Show nav when checkbox is checked */
+    }
+
+    .sidebar .main-nav ul {
         margin-top: 0;
         display: flex;
+        flex-direction: column; /* Stack links vertically */
+        align-items: center; /* Center text */
+        padding: 10px 0;
     }
-    .sidebar nav li {
+    .sidebar .main-nav li {
         margin-bottom: 0;
-        margin-left: 15px;
+        margin-left: 0; /* Reset margin */
+        width: 100%;
     }
-    .sidebar nav a {
+    .sidebar .main-nav li a {
+        display: block;
+        padding: 10px 0;
         font-size: 1em;
+        text-align: center;
     }
+
     .sidebar .social-icons {
         display: none; /* Hide social icons on small screens or reposition */
     }
