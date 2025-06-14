@@ -18,6 +18,9 @@ body {
     margin: auto;
     overflow: hidden;
     padding: 0 20px;
+    display: flex; /* Added for vertical alignment */
+    align-items: center; /* Added for vertical alignment */
+    justify-content: space-between; /* Added to push nav to right */
 }
 
 /* Header */
@@ -33,12 +36,13 @@ header {
 
 header h1 {
     font-family: 'Playfair Display', serif;
-    float: left;
+    /* float: left; Removed */
     font-size: 1.8em;
+    margin: 0; /* Remove default margin if any */
 }
 
 header nav {
-    float: right;
+    /* float: right; Removed */
 }
 
 header ul {
@@ -195,8 +199,12 @@ footer {
 
 /* Responsive Design */
 @media(max-width: 768px) {
+    header .container {
+        flex-direction: column; /* Stack h1 and nav toggle label */
+        align-items: center; /* Center items horizontally */
+    }
     header h1 {
-        float: none;
+        /* float: none; Removed */
         text-align: center;
         margin-bottom: 10px;
     }
