@@ -10,6 +10,7 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #f4f4f4;
+    padding-top: 70px; /* Added for fixed header */
 }
 
 .container {
@@ -21,42 +22,59 @@ body {
 
 /* Header */
 header {
-    background: #333;
-    color: #fff;
-    padding-top: 30px;
-    min-height: 70px;
-    border-bottom: #77aaff 3px solid;
+    background: #f8f9fa; /* Light background */
+    color: #333; /* Dark text */
+    padding: 15px 0; /* Adjusted padding */
+    border-bottom: 1px solid #dee2e6; /* Lighter border */
+    position: fixed; /* Fixed position */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+header .container { /* Ensure container inside fixed header behaves */
+    width: 80%;
+    margin: auto;
+    overflow: hidden; /* Already there, good */
+    display: flex; /* Align items in a row */
+    justify-content: space-between; /* Space h1 and nav */
+    align-items: center; /* Vertically align items */
 }
 
 header h1 {
     font-family: 'Montserrat', sans-serif;
-    float: left;
-    margin-top: 5px;
+    /* float: left; removed, using flexbox */
+    margin-top: 0; /* Adjusted due to flex align-items */
+    font-size: 1.8em; /* Keep or adjust as needed */
 }
 
 header nav {
-    float: right;
-    margin-top: 10px;
+    /* float: right; removed, using flexbox */
+    margin-top: 0; /* Adjusted due to flex align-items */
 }
 
 header ul {
     list-style: none;
+    margin: 0; /* Reset margin */
+    padding: 0; /* Reset padding */
 }
 
 header li {
     display: inline;
-    padding: 0 20px 0 20px;
+    padding: 0 15px; /* Adjusted padding */
 }
 
 header a {
-    color: #fff;
+    color: #007bff; /* Standard link color */
     text-decoration: none;
     text-transform: uppercase;
     font-size: 16px;
 }
 
 header a:hover {
-    color: #77aaff;
+    color: #0056b3; /* Darker link color on hover */
 }
 
 /* Hamburger Menu */
@@ -77,34 +95,13 @@ header a:hover {
     display: block;
     width: 25px;
     height: 3px;
-    background-color: #fff;
+    background-color: #333; /* Darker icon for light header */
     margin: 5px 0;
     transition: all 0.3s ease-in-out;
 }
 
 
-/* Hero Section */
-#hero {
-    background: #555 url('https://images.unsplash.com/photo-1749680287741-243118ed6b2c?w=1200&auto=format&fit=crop&q=80') no-repeat center center/cover; /* サンプル背景画像 */
-    color: #fff;
-    min-height: 400px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
-
-#hero h2 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 3em;
-    margin-bottom: 20px;
-}
-
-#hero p {
-    font-size: 1.2em;
-}
+/* Hero Section - REMOVED */
 
 
 /* Works Section */
@@ -123,40 +120,51 @@ header a:hover {
 
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    grid-template-columns: 1fr; /* Single column */
+    gap: 0; /* No gap between items */
 }
 
 .gallery-item {
-    background: #f9f9f9;
-    border: 1px solid #ddd;
-    padding: 15px;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Square items */
+    position: relative; /* For caption positioning */
+    overflow: hidden; /* Ensure content fits */
+    background: #e9ecef; /* Fallback background */
 }
 
 .gallery-item:hover {
-    transform: translateY(-5px);
+    /* transform: translateY(-5px); Optional: remove or adjust hover effect */
 }
 
 .gallery-item img {
     width: 100%;
-    height: 200px;
+    height: 100%;
     object-fit: cover;
-    margin-bottom: 15px;
-    border-radius: 5px;
+    display: block; /* Remove extra space below image */
+    border-radius: 0; /* No border radius for full-width items */
+}
+
+.gallery-item h4, .gallery-item p {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    color: #fff;
+    padding: 10px 15px;
+    margin: 0;
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background for text */
+    box-sizing: border-box;
 }
 
 .gallery-item h4 {
     font-family: 'Montserrat', sans-serif;
-    margin-bottom: 10px;
-    color: #333;
+    bottom: 30px; /* Position above p, adjust as needed */
+    font-size: 1.2em;
+    padding-bottom: 5px; /* Space between h4 and p if p is also at bottom */
 }
 
 .gallery-item p {
     font-size: 0.9em;
-    color: #666;
+    bottom: 10px; /* Position at the bottom */
 }
 
 /* Footer */
@@ -170,37 +178,53 @@ footer {
 
 /* Responsive Design */
 @media(max-width: 768px) {
+    header .container {
+        flex-direction: column; /* Stack h1 and nav on mobile */
+    }
     header h1 {
-        float: none;
-        text-align: center;
-        width: 100%;
-        margin-bottom: 10px; /* Add some space if nav is below */
+        /* float: none; text-align: center; width: 100%; */ /* Handled by flex */
+        margin-bottom: 10px;
     }
 
     .nav-toggle-label {
         display: block; /* Show hamburger */
-        top: 20px; /* Adjust for smaller header */
-        right: 20px;
+        position: absolute; /* Position relative to header */
+        top: 22px; /* Adjust to vertically center with h1 */
+        right: 30px; /* Adjust for padding */
     }
 
     header .main-nav {
-        display: none;
-        width: 100%;
-        margin-top: 10px; /* Space between h1 and nav */
+        display: none; /* Hidden by default */
+        /* Styles for when menu is open are below */
+    }
+    
+    .nav-toggle:checked ~ .main-nav {
+        display: flex; /* Use flex to center content */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 60px; /* Height of the header, adjust if needed */
+        left: 0;
+        width: 100vw;
+        height: calc(100vh - 60px); /* Full height minus header */
+        background: rgba(248, 249, 250, 0.97); /* Semi-transparent light background */
+        margin-top: 0; /* Reset margin */
+        padding-top: 0; /* Reset padding */
     }
     
     header .main-nav ul {
         text-align: center;
-        padding-top: 10px; /* Space from toggle */
+        padding-top: 0; /* Reset padding */
     }
 
     header .main-nav li {
         display: block;
-        padding: 10px 0;
+        padding: 15px 0; /* Increased padding for touch targets */
     }
     
-    .nav-toggle:checked ~ .main-nav {
-        display: block;
+    header .main-nav a {
+        font-size: 1.2em; /* Larger font for readability */
     }
 
     /* Hamburger animation when checked */
@@ -214,12 +238,9 @@ footer {
         transform: rotate(-45deg) translate(5px, -5px);
     }
 
+    /* #hero h2 related styles removed as hero section is removed */
 
-    #hero h2 {
-        font-size: 2em;
-    }
-
-    .gallery {
+    .gallery { /* This might be redundant if already 1fr, but ensure it for mobile */
         grid-template-columns: 1fr;
     }
 }
