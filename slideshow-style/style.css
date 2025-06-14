@@ -237,7 +237,13 @@ footer {
 		display: none;
 		width: 100%;
 		text-align: center;
+		background: rgba(0, 0, 0, 0.8); /* Match header background */
 		padding-top: 10px; /* Add some padding */
+		position: fixed; /* Ensure it covers content below header */
+		left: 0;
+		top: 44px; /* Mobile header height */
+		height: calc(100vh - 44px); /* Full height minus header */
+		overflow-y: auto; /* Allow scrolling if content overflows */
 	}
 
 	header .main-nav ul {
@@ -255,13 +261,15 @@ footer {
 
 	/* Hamburger animation when checked */
 	.nav-toggle:checked ~ .nav-toggle-label span:nth-child(1) {
-		transform: rotate(45deg) translate(5px, 5px);
+		transform: rotate(45deg);
+		top: 7px; /* Adjust position to form X */
 	}
 	.nav-toggle:checked ~ .nav-toggle-label span:nth-child(2) {
 		opacity: 0;
 	}
 	.nav-toggle:checked ~ .nav-toggle-label span:nth-child(3) {
-		transform: rotate(-45deg) translate(5px, -5px);
+		transform: rotate(-45deg);
+		top: -7px; /* Adjust position to form X */
 	}
 
 	/* Adjust slideshow margin if header height changes significantly */
