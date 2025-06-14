@@ -85,16 +85,16 @@ header a:hover {
 	background-color: #fff; /* White icon for dark header */
 	margin: 5px 0;
 	transition: all 0.3s ease-in-out;
+	position: relative; /* Added for correct top positioning of pseudo-elements if used, or direct children */
 }
 
 /* Slideshow container */
 #slideshow-container {
 	max-width: 100%; /* 画面幅いっぱいに */
 	position: relative;
-	/* Header height: padding (10px*2) + h1 (1.8em, approx 29px) = ~49px */
-	margin: 49px auto 0; 
+	margin: 0 auto; /* Header will overlay this */
 	overflow: hidden; /* 画像がはみ出ないように */
-	height: calc(100vh - 49px); /* Adjust height based on new margin */
+	height: 100vh; /* Full viewport height */
 }
 
 .slide {
@@ -241,7 +241,8 @@ footer {
 		padding-top: 10px; /* Add some padding */
 		position: fixed; /* Ensure it covers content below header */
 		left: 0;
-		top: 44px; /* Mobile header height */
+		/* Mobile header height: padding (10px*2) + h1 (1.5em, approx 24px) = ~44px */
+		top: 44px; 
 		height: calc(100vh - 44px); /* Full height minus header */
 		overflow-y: auto; /* Allow scrolling if content overflows */
 	}
@@ -262,21 +263,24 @@ footer {
 	/* Hamburger animation when checked */
 	.nav-toggle:checked ~ .nav-toggle-label span:nth-child(1) {
 		transform: rotate(45deg);
-		top: 7px; /* Adjust position to form X */
+		/* Adjust top to center the X mark, considering line height and margin */
+		/* Original margin is 5px, line height is 3px. Total height for 3 lines + 2 margins = 3*3 + 2*5 = 19px. Center is at 9.5px. */
+		/* First line's original top is 0. It needs to move to center of middle line. Middle line center is at 3px(line)/2 + 5px(margin) + 3px(line)/2 = 8px from top of first line. */
+		top: 8px; 
 	}
 	.nav-toggle:checked ~ .nav-toggle-label span:nth-child(2) {
 		opacity: 0;
 	}
 	.nav-toggle:checked ~ .nav-toggle-label span:nth-child(3) {
 		transform: rotate(-45deg);
-		top: -7px; /* Adjust position to form X */
+		/* Third line's original top is 2*(3px+5px) = 16px. It needs to move to center of middle line. */
+		top: -8px;
 	}
 
 	/* Adjust slideshow margin if header height changes significantly */
 	#slideshow-container {
-		/* Mobile header height: padding (10px*2) + h1 (1.5em, approx 24px) = ~44px */
-		margin-top: 44px; 
-		height: calc(100vh - 44px); /* Adjust height based on new margin */
+		margin-top: 0; /* Header will overlay this */
+		height: 100vh; /* Full viewport height */
 	}
 
 	.slide-caption h2 {
