@@ -1,0 +1,215 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff; /* スライドショーが映えるように白背景 */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background: rgba(0, 0, 0, 0.8); /* 半透明の黒 */
+    color: #fff;
+    padding: 20px 0;
+    position: fixed; /* スクロールしても追従 */
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    float: left;
+    font-size: 1.8em;
+}
+
+header nav {
+    float: right;
+}
+
+header ul {
+    list-style: none;
+}
+
+header li {
+    display: inline;
+    padding: 0 15px;
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+header a:hover {
+    color: #aaa;
+}
+
+/* Slideshow container */
+#slideshow-container {
+    max-width: 100%; /* 画面幅いっぱいに */
+    position: relative;
+    margin: 80px auto 0; /* ヘッダーの高さ分マージン */
+    overflow: hidden; /* 画像がはみ出ないように */
+    height: calc(100vh - 80px); /* ヘッダーを除いたビューポートの高さ */
+}
+
+.slide {
+    display: none; /* Initially hide all slides */
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 画像をコンテナに合わせてトリミング */
+    vertical-align: middle;
+}
+
+.slide-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.slide-caption h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.slide-caption p {
+    font-size: 1.1em;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0,0,0,0.3);
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* Dots (indicators) */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    /* position: fixed; /* スライドショーによっては固定しない方が良い場合も */
+    /* bottom: 0; */
+    /* width: 100%; */
+}
+
+/* Responsive Design */
+@media(max-width: 768px) {
+    header h1 {
+        float: none;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    header nav {
+        float: none;
+        text-align: center;
+    }
+    header nav li {
+        padding: 0 10px;
+    }
+
+    #slideshow-container {
+        margin-top: 120px; /* ヘッダーの高さが変わるため調整 */
+        height: calc(100vh - 120px);
+    }
+
+    .slide-caption h2 {
+        font-size: 1.5em;
+    }
+    .slide-caption p {
+        font-size: 0.9em;
+    }
+    .prev, .next {
+        font-size: 16px;
+        padding: 12px;
+    }
+}
+
+@media(max-width: 480px) {
+    .slide-caption {
+        padding: 10px 15px;
+        bottom: 10px;
+    }
+    .slide-caption h2 {
+        font-size: 1.2em;
+    }
+    .slide-caption p {
+        font-size: 0.8em;
+    }
+}
