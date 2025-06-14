@@ -126,10 +126,13 @@ header a:hover {
 
 .gallery-item {
     width: 100%;
-    aspect-ratio: 1 / 1; /* Square items */
-    position: relative; /* For caption positioning */
+    /* aspect-ratio: 1 / 1; Removed, will be controlled by img */
+    /* position: relative; No longer needed for overlay */
     overflow: hidden; /* Ensure content fits */
-    background: #e9ecef; /* Fallback background */
+    background: #fff; /* Background for the item container */
+    margin-bottom: 20px; /* Add space between items if needed */
+    border: 1px solid #eee; /* Optional border */
+    border-radius: 4px; /* Optional rounded corners */
 }
 
 .gallery-item:hover {
@@ -138,33 +141,28 @@ header a:hover {
 
 .gallery-item img {
     width: 100%;
-    height: 100%;
+    aspect-ratio: 1 / 1; /* Make image square */
     object-fit: cover;
     display: block; /* Remove extra space below image */
     border-radius: 0; /* No border radius for full-width items */
 }
 
-.gallery-item h4, .gallery-item p {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    color: #fff;
-    padding: 10px 15px;
-    margin: 0;
-    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background for text */
-    box-sizing: border-box;
+.item-info {
+    padding: 15px;
+    text-align: left; /* Or center, as preferred */
 }
 
-.gallery-item h4 {
+.item-info h4 {
     font-family: 'Montserrat', sans-serif;
-    bottom: 30px; /* Position above p, adjust as needed */
-    font-size: 1.2em;
-    padding-bottom: 5px; /* Space between h4 and p if p is also at bottom */
+    font-size: 1.1em; /* Adjusted size */
+    color: #333; /* Dark text color */
+    margin: 0 0 5px 0; /* Reset margin, add bottom margin */
 }
 
-.gallery-item p {
+.item-info .client {
     font-size: 0.9em;
-    bottom: 10px; /* Position at the bottom */
+    color: #777; /* Lighter text for client info */
+    display: block; /* Ensure it takes its own line if needed */
 }
 
 /* Footer */
