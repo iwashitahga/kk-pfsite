@@ -61,7 +61,7 @@ header a:hover {
 
 /* Hero Section */
 #hero {
-    background: #555 url('https://burst.shopifycdn.com/photos/stylish-workspace-with-laptop-and-plants.jpg?width=1200&format=pjpg&exif=0&iptc=0') no-repeat center center/cover; /* サンプル背景画像 */
+    background: #555 url('https://images.unsplash.com/photo-1749680287741-243118ed6b2c?w=1200&auto=format&fit=crop&q=80') no-repeat center center/cover; /* サンプル背景画像 */
     color: #fff;
     min-height: 400px;
     text-align: center;
