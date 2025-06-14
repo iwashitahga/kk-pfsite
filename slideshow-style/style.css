@@ -91,9 +91,10 @@ header a:hover {
 #slideshow-container {
 	max-width: 100%; /* 画面幅いっぱいに */
 	position: relative;
-	margin: 66px auto 0; /* 新しいヘッダーの高さ分マージン (10px + h1高さ約46px + 10px) */
+	/* Header height: padding (10px*2) + h1 (1.8em, approx 29px) = ~49px */
+	margin: 49px auto 0; 
 	overflow: hidden; /* 画像がはみ出ないように */
-	height: calc(100vh - 66px); /* 新しいヘッダーの高さ分を引く */
+	height: calc(100vh - 49px); /* Adjust height based on new margin */
 }
 
 .slide {
@@ -219,13 +220,17 @@ footer {
 
 	.nav-toggle-label {
 		display: block; /* Show hamburger */
-		/* Position within the container, header is position:fixed */
-		/* The .container in header might need position:relative if not already */
+		position: absolute; /* Ensure positioning context from header .container */
+		top: 50%; /* Vertically center */
+		transform: translateY(-50%); /* Adjust for exact centering */
+		right: 20px; /* Keep right alignment */
+		/* z-index: 1001; already set */
+		/* cursor: pointer; already set */
 	}
 
 	header .container {
 		/* Ensure label is positioned relative to this */
-		position: relative;
+		position: relative; /* This is crucial for absolute positioning of the label */
 	}
 
 	header .main-nav {
@@ -261,8 +266,9 @@ footer {
 
 	/* Adjust slideshow margin if header height changes significantly */
 	#slideshow-container {
-		margin-top: 76px; /* モバイル時の新しいヘッダー高さ (padding 10px + h1高さ約46px + h1 margin-bottom 10px + padding 10px) */
-		height: calc(100vh - 76px); /* モバイル時の新しいヘッダー高さを引く */
+		/* Mobile header height: padding (10px*2) + h1 (1.5em, approx 24px) = ~44px */
+		margin-top: 44px; 
+		height: calc(100vh - 44px); /* Adjust height based on new margin */
 	}
 
 	.slide-caption h2 {
