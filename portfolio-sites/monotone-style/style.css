@@ -1,0 +1,338 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito Sans', sans-serif;
+    line-height: 1.6;
+    color: #333; /* Dark grey for text */
+    background-color: #fff; /* White background */
+    display: flex; /* For sidebar layout */
+}
+
+/* Sidebar */
+.sidebar {
+    width: 280px;
+    background-color: #1a1a1a; /* Very dark grey / off-black */
+    color: #f0f0f0; /* Light grey for text */
+    padding: 30px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.sidebar .logo a {
+    font-family: 'Lato', sans-serif;
+    font-size: 2em;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    margin-top: 50px;
+}
+
+.sidebar nav li {
+    margin-bottom: 20px;
+}
+
+.sidebar nav a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+.sidebar nav a.active,
+.sidebar nav a:hover {
+    color: #fff;
+    font-weight: bold;
+}
+
+.sidebar .social-icons a {
+    color: #aaa;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 0.9em;
+    transition: color 0.3s ease;
+}
+
+.sidebar .social-icons a:hover {
+    color: #fff;
+}
+
+/* Main Content Area */
+.main-content {
+    margin-left: 280px; /* Same as sidebar width */
+    padding: 40px;
+    width: calc(100% - 280px);
+    background-color: #f9f9f9; /* Very light grey for content background */
+}
+
+section {
+    padding: 60px 0;
+    border-bottom: 1px solid #e0e0e0; /* Light grey border */
+}
+section:last-of-type {
+    border-bottom: none;
+}
+
+h1, h2 {
+    font-family: 'Lato', sans-serif;
+    color: #222; /* Darker grey for headings */
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 3em;
+    font-weight: 300; /* Lighter weight for H1 */
+}
+
+h2 {
+    font-size: 2.2em;
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+p {
+    color: #555; /* Medium grey for paragraphs */
+    margin-bottom: 15px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #333; /* Dark grey button */
+    color: #fff;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: 2px solid #333;
+}
+
+.cta-button:hover {
+    background-color: #555; /* Lighter grey on hover */
+    border-color: #555;
+    transform: translateY(-2px);
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #fff; /* White background for hero */
+}
+
+.hero-text p {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Portfolio Section */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.05);
+}
+
+.item-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(26, 26, 26, 0.85); /* Dark overlay */
+    color: #fff;
+    padding: 15px;
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+}
+
+.portfolio-item:hover .item-overlay {
+    transform: translateY(0);
+}
+
+.item-overlay h3 {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.3em;
+    margin-bottom: 5px;
+    color: #fff;
+}
+.item-overlay p {
+    font-size: 0.9em;
+    color: #ddd;
+    margin-bottom: 0;
+}
+
+/* About Section */
+.about-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.profile-pic {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #e0e0e0; /* Light grey border */
+}
+
+.about-content p {
+    flex: 1;
+    font-size: 1.05em;
+}
+
+/* Contact Section */
+#contact form {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+#contact input,
+#contact textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc; /* Light grey border */
+    border-radius: 4px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1em;
+    background-color: #fff;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+    outline: none;
+    border-color: #888; /* Darker grey on focus */
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+#contact button {
+    width: auto;
+    cursor: pointer;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px 0;
+    background-color: #fff;
+    border-top: 1px solid #e0e0e0;
+}
+
+footer p {
+    color: #777;
+    font-size: 0.9em;
+    margin-bottom: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) { /* Tablet and smaller */
+    .sidebar {
+        width: 220px;
+        padding: 20px;
+    }
+    .main-content {
+        margin-left: 220px;
+        width: calc(100% - 220px);
+        padding: 30px;
+    }
+    .portfolio-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .profile-pic {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) { /* Mobile */
+    body {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: static;
+        flex-direction: row; /* Horizontal layout for mobile nav */
+        justify-content: space-around;
+        padding: 15px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .sidebar .logo {
+        font-size: 1.5em;
+    }
+    .sidebar nav ul {
+        margin-top: 0;
+        display: flex;
+    }
+    .sidebar nav li {
+        margin-bottom: 0;
+        margin-left: 15px;
+    }
+    .sidebar nav a {
+        font-size: 1em;
+    }
+    .sidebar .social-icons {
+        display: none; /* Hide social icons on small screens or reposition */
+    }
+
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+        padding: 20px;
+    }
+    h1 { font-size: 2.5em; }
+    h2 { font-size: 1.8em; }
+    .hero-section { min-height: 60vh; }
+    .portfolio-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+    }
+}

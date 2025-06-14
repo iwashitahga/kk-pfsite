@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>モノトーン ポートフォリオ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <a href="#">MNCHRM</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="social-icons">
+            <a href="#">Fb</a>
+            <a href="#">Tw</a>
+            <a href="#">In</a>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <section id="home" class="hero-section">
+            <div class="hero-text">
+                <h1>Elegant & Minimal</h1>
+                <p>Creating impactful digital experiences with a focus on clarity and precision.</p>
+                <a href="#portfolio" class="cta-button">View My Work</a>
+            </div>
+        </section>
+
+        <section id="portfolio">
+            <h2>My Portfolio</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="images/mono-work1.jpg" alt="作品1">
+                    <div class="item-overlay">
+                        <h3>Project Title One</h3>
+                        <p>Short description of the project.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="images/mono-work2.jpg" alt="作品2">
+                    <div class="item-overlay">
+                        <h3>Project Title Two</h3>
+                        <p>Short description of the project.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="images/mono-work3.jpg" alt="作品3">
+                    <div class="item-overlay">
+                        <h3>Project Title Three</h3>
+                        <p>Short description of the project.</p>
+                    </div>
+                </div>
+                 <div class="portfolio-item">
+                    <img src="images/mono-work4.jpg" alt="作品4">
+                    <div class="item-overlay">
+                        <h3>Project Title Four</h3>
+                        <p>Short description of the project.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <img src="images/profile-placeholder.jpg" alt="Your Name" class="profile-pic">
+                <p>Hello! I'm a designer/developer passionate about creating clean, user-friendly interfaces. My approach is rooted in minimalist principles, ensuring that every element serves a purpose. I believe that good design is not just about aesthetics, but also about effective communication and seamless functionality.</p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <form action="#">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit" class="cta-button">Send Message</button>
+            </form>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 Your Name. Monochromatic Design.</p>
+        </footer>
+    </div>
+</body>
+</html>
