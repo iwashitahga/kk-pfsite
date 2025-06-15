@@ -5,7 +5,7 @@
 }
 
 body {
-	font-family: "Roboto", sans-serif;
+	font-family: "Zen Kaku Gothic New", sans-serif;
 	line-height: 1.6;
 	color: #333;
 	background-color: #fff;
@@ -33,7 +33,7 @@ header {
 }
 
 header h1 {
-	font-family: "Playfair Display", serif;
+	font-family: "Zen Kaku Gothic New", sans-serif;
 	font-size: 1.8em;
 	margin: 0;
 }
@@ -121,7 +121,7 @@ header a:hover {
 }
 
 .slide-caption h2 {
-	font-family: "Playfair Display", serif;
+	font-family: "Zen Kaku Gothic New", sans-serif;
 	font-size: 2em;
 	margin-bottom: 0;
 }
@@ -299,7 +299,7 @@ footer {
 	font-size: 2em;
 	margin-bottom: 30px;
 	color: #333;
-	font-family: "Montserrat", sans-serif;
+	font-family: "Zen Kaku Gothic New", sans-serif;
 }
 
 .modern-chic-content-wrapper #works {
@@ -348,14 +348,14 @@ footer {
 	margin-bottom: 8px;
 	text-transform: uppercase;
 	letter-spacing: 0.5px;
-	font-family: "Montserrat", sans-serif;
+	font-family: "Zen Kaku Gothic New", sans-serif;
 }
 
 .modern-chic-content-wrapper .item-info h4 {
 	font-size: 1.1em;
 	color: #333;
 	margin: 0;
-	font-family: "Montserrat", sans-serif;
+	font-family: "Zen Kaku Gothic New", sans-serif;
 }
 
 .modern-chic-content-wrapper #about-section {
