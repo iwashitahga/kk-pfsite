@@ -343,7 +343,8 @@ body {
 	/* Common title for sections within page-content */
 	text-align: center;
 	font-size: 2em;
-	margin-bottom: 30px;
+	margin-top: 40px; /* 上部の余白を追加 */
+	margin-bottom: 20px; /* 下部の余白を調整 */
 	color: #333;
 	font-family: "Noto Sans JP", sans-serif;
 }
