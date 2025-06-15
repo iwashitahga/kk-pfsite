@@ -310,3 +310,162 @@ footer {
 	}
 	/* .slide-caption p (smaller mobile) のスタイルも不要 */
 }
+
+/* Styles for modern-chic based pages (About, Project, Contact) */
+.modern-chic-content-wrapper {
+    font-family: "Zen Kaku Gothic New", sans-serif; /* Default font for these sections */
+    padding-top: 70px; /* Adjusted for fixed header (header height approx 44-49px + some space) */
+    padding-bottom: 40px;
+    background-color: #fff; /* Default background for content pages */
+}
+
+.modern-chic-content-wrapper .container {
+    width: 80%; /* modern-chic container width */
+    max-width: 960px; /* Max width for content */
+    margin: 0 auto; /* Center content */
+    overflow: visible; /* Override slideshow .container's hidden if needed */
+    padding: 0 20px; /* Horizontal padding */
+    /* Reset flex properties from slideshow .container as they might not be needed here */
+    display: block; 
+    align-items: stretch; /* Default value */
+    justify-content: flex-start; /* Default value */
+}
+
+/* Section Titles for About, Project, Contact */
+.modern-chic-content-wrapper h2.section-title,
+.modern-chic-content-wrapper h3.section-title { /* Used in project page */
+	text-align: center;
+	font-size: 2em;
+	margin-bottom: 30px;
+	color: #333;
+    font-family: 'Montserrat', sans-serif; /* Montserrat for titles */
+}
+
+/* Project Page (#works section) */
+.modern-chic-content-wrapper #works {
+	padding: 40px 0;
+	background-color: #f4f4f4; /* Original modern-chic background for works section */
+}
+
+.modern-chic-content-wrapper .gallery {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr); /* 3 columns for PC */
+	gap: 20px;
+}
+
+.modern-chic-content-wrapper .gallery-item {
+	width: 100%;
+	overflow: hidden;
+	background: #fff; /* Item background */
+	margin-bottom: 20px;
+	border: 1px solid #eee;
+	border-radius: 4px;
+}
+
+.modern-chic-content-wrapper .gallery-item img {
+	width: 100%;
+	aspect-ratio: 1 / 1; /* Square images */
+	object-fit: cover;
+	display: block;
+}
+
+.modern-chic-content-wrapper .item-info {
+	padding: 15px;
+	text-align: left;
+}
+
+.modern-chic-content-wrapper .item-info .work-type {
+	font-size: 0.85em;
+	color: #555;
+	display: block;
+	margin-bottom: 8px;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+    font-family: 'Montserrat', sans-serif; /* Montserrat for work type */
+}
+
+.modern-chic-content-wrapper .item-info h4 { /* Project title */
+	font-size: 1.1em;
+	color: #333;
+	margin: 0;
+    font-family: 'Montserrat', sans-serif; /* Montserrat for project title */
+}
+
+/* About Page (#about-section) */
+.modern-chic-content-wrapper #about-section {
+    padding: 40px 0;
+    text-align: center;
+}
+.modern-chic-content-wrapper #about-section p {
+    font-size: 1.1em;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto 20px auto;
+    line-height: 1.8;
+    font-family: "Zen Kaku Gothic New", sans-serif; /* Body text font */
+}
+
+/* Contact Page (#contact-form-section) */
+.modern-chic-content-wrapper #contact-form-section {
+    padding: 40px 0;
+}
+
+.modern-chic-content-wrapper #contact-form-section form {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.modern-chic-content-wrapper #contact-form-section input[type="text"],
+.modern-chic-content-wrapper #contact-form-section input[type="email"],
+.modern-chic-content-wrapper #contact-form-section textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: "Zen Kaku Gothic New", sans-serif; /* Form input font */
+    font-size: 1em;
+    background-color: #fff;
+    color: #333;
+}
+.modern-chic-content-wrapper #contact-form-section input[type="text"]::placeholder,
+.modern-chic-content-wrapper #contact-form-section input[type="email"]::placeholder,
+.modern-chic-content-wrapper #contact-form-section textarea::placeholder {
+    color: #999;
+}
+
+.modern-chic-content-wrapper #contact-form-section button {
+    display: inline-block;
+    background: #007bff; /* Original modern-chic button color */
+    color: #fff;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-family: "Zen Kaku Gothic New", sans-serif; /* Button font */
+}
+
+.modern-chic-content-wrapper #contact-form-section button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Responsive adjustments for modern-chic content */
+@media (max-width: 768px) {
+    .modern-chic-content-wrapper {
+        padding-top: 60px; /* Adjust for mobile header height */
+    }
+    .modern-chic-content-wrapper .container {
+        width: 90%; /* More space on mobile */
+    }
+    .modern-chic-content-wrapper .gallery {
+        grid-template-columns: 1fr; /* Single column for gallery on mobile */
+    }
+    .modern-chic-content-wrapper .gallery-item {
+        border: none; /* Remove border on mobile as per previous request */
+        margin-bottom: 0; 
+        border-radius: 0;
+    }
+}
