@@ -12,61 +12,61 @@
 <body>
     <header>
         <div class="container">
-            <h1><a href="./">My Portfolio</a></h1>
-            <input type="checkbox" id="slideshow-nav-toggle" class="nav-toggle">
-            <label for="slideshow-nav-toggle" class="nav-toggle-label">
-                <span></span>
-                <span></span>
-                <span></span>
+            <h1 class="header__title"><a href="./" class="header__title-link">My Portfolio</a></h1>
+            <input type="checkbox" id="slideshow-nav-toggle" class="header__nav-toggle-checkbox">
+            <label for="slideshow-nav-toggle" class="header__nav-toggle-label">
+                <span class="header__nav-toggle-bar"></span>
+                <span class="header__nav-toggle-bar"></span>
+                <span class="header__nav-toggle-bar"></span>
             </label>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="./">Home</a></li>
-                    <li><a href="./about/">About</a></li>
-                    <li><a href="./project/">Project</a></li>
-                    <li><a href="./contact/">Contact</a></li>
+            <nav class="header__nav">
+                <ul class="header__nav-list">
+                    <li class="header__nav-item"><a href="./" class="header__nav-link">Home</a></li>
+                    <li class="header__nav-item"><a href="./about/" class="header__nav-link">About</a></li>
+                    <li class="header__nav-item"><a href="./project/" class="header__nav-link">Project</a></li>
+                    <li class="header__nav-item"><a href="./contact/" class="header__nav-link">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <main>
-        <section id="slideshow-container">
-            <div class="slide fade">
-                <img src="https://images.unsplash.com/photo-1749680287741-243118ed6b2c?w=1200&auto=format&fit=crop&q=80" alt="作品1">
-                <div class="slide-caption">
-                    <h2>プロジェクトタイトル 1</h2>
+        <section class="hero-slideshow">
+            <div class="hero-slideshow__item hero-slideshow__item--fade">
+                <img src="https://images.unsplash.com/photo-1749680287741-243118ed6b2c?w=1200&auto=format&fit=crop&q=80" alt="作品1" class="hero-slideshow__image">
+                <div class="hero-slideshow__caption">
+                    <h2 class="hero-slideshow__caption-title">プロジェクトタイトル 1</h2>
                 </div>
             </div>
 
-            <div class="slide fade">
-                <img src="https://images.unsplash.com/photo-1742836531212-c55044926fbd?w=1200&auto=format&fit=crop&q=80" alt="作品2">
-                <div class="slide-caption">
-                    <h2>プロジェクトタイトル 2</h2>
+            <div class="hero-slideshow__item hero-slideshow__item--fade">
+                <img src="https://images.unsplash.com/photo-1742836531212-c55044926fbd?w=1200&auto=format&fit=crop&q=80" alt="作品2" class="hero-slideshow__image">
+                <div class="hero-slideshow__caption">
+                    <h2 class="hero-slideshow__caption-title">プロジェクトタイトル 2</h2>
                 </div>
             </div>
 
-            <div class="slide fade">
-                <img src="https://images.unsplash.com/photo-1749371930388-50c782b0acea?w=1200&auto=format&fit=crop&q=80" alt="作品3">
-                <div class="slide-caption">
-                    <h2>プロジェクトタイトル 3</h2>
+            <div class="hero-slideshow__item hero-slideshow__item--fade">
+                <img src="https://images.unsplash.com/photo-1749371930388-50c782b0acea?w=1200&auto=format&fit=crop&q=80" alt="作品3" class="hero-slideshow__image">
+                <div class="hero-slideshow__caption">
+                    <h2 class="hero-slideshow__caption-title">プロジェクトタイトル 3</h2>
                 </div>
             </div>
 
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            <a class="hero-slideshow__control hero-slideshow__control--prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="hero-slideshow__control hero-slideshow__control--next" onclick="plusSlides(1)">&#10095;</a>
         </section>
 
-        <div style="text-align:center; margin-top: 10px;">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
+        <div class="hero-slideshow__dot-navigation">
+            <span class="hero-slideshow__dot" onclick="currentSlide(1)"></span>
+            <span class="hero-slideshow__dot" onclick="currentSlide(2)"></span>
+            <span class="hero-slideshow__dot" onclick="currentSlide(3)"></span>
         </div>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Your Name. All Rights Reserved.</p>
+    <footer class="footer">
+        <div class="container footer__container">
+            <p class="footer__text">&copy; 2025 Your Name. All Rights Reserved.</p>
         </div>
     </footer>
 

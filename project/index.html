@@ -10,57 +10,57 @@
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1><a href="../">My Portfolio</a></h1>
-            <input type="checkbox" id="slideshow-nav-toggle" class="nav-toggle">
-            <label for="slideshow-nav-toggle" class="nav-toggle-label">
-                <span></span>
-                <span></span>
-                <span></span>
+    <header class="header">
+        <div class="container header__container">
+            <h1 class="header__title"><a href="../" class="header__title-link">My Portfolio</a></h1>
+            <input type="checkbox" id="slideshow-nav-toggle" class="header__nav-toggle-checkbox">
+            <label for="slideshow-nav-toggle" class="header__nav-toggle-label">
+                <span class="header__nav-toggle-bar"></span>
+                <span class="header__nav-toggle-bar"></span>
+                <span class="header__nav-toggle-bar"></span>
             </label>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="../">Home</a></li>
-                    <li><a href="../about/">About</a></li>
-                    <li><a href="../project/">Project</a></li>
-                    <li><a href="../contact/">Contact</a></li>
+            <nav class="header__nav">
+                <ul class="header__nav-list">
+                    <li class="header__nav-item"><a href="../" class="header__nav-link">Home</a></li>
+                    <li class="header__nav-item"><a href="../about/" class="header__nav-link">About</a></li>
+                    <li class="header__nav-item"><a href="../project/" class="header__nav-link">Project</a></li>
+                    <li class="header__nav-item"><a href="../contact/" class="header__nav-link">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main class="modern-chic-content-wrapper">
-        <div class="container">
-            <section id="works">
-                <h3 class="section-title">My Works</h3>
-                <div class="gallery">
-                    <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1749680287741-243118ed6b2c?w=750&auto=format&fit=crop&q=80" alt="作品1">
-                        <div class="item-info">
-                            <span class="work-type">ウェブサイト</span>
-                            <h4>プロジェクトタイトル 1</h4>
+    <main class="page-content">
+        <div class="container page-content__container project-gallery__container">
+            <section class="project-gallery">
+                <h3 class="page-content__title project-gallery__title">My Works</h3>
+                <div class="project-gallery__list">
+                    <div class="project-gallery__item">
+                        <img src="https://images.unsplash.com/photo-1749680287741-243118ed6b2c?w=750&auto=format&fit=crop&q=80" alt="作品1" class="project-gallery__image">
+                        <div class="project-gallery__info">
+                            <span class="project-gallery__work-type">ウェブサイト</span>
+                            <h4 class="project-gallery__item-title">プロジェクトタイトル 1</h4>
                         </div>
                     </div>
-                    <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1742836531212-c55044926fbd?w=750&auto=format&fit=crop&q=80" alt="作品2">
-                        <div class="item-info">
-                            <span class="work-type">ロゴデザイン</span>
-                            <h4>プロジェクトタイトル 2</h4>
+                    <div class="project-gallery__item">
+                        <img src="https://images.unsplash.com/photo-1742836531212-c55044926fbd?w=750&auto=format&fit=crop&q=80" alt="作品2" class="project-gallery__image">
+                        <div class="project-gallery__info">
+                            <span class="project-gallery__work-type">ロゴデザイン</span>
+                            <h4 class="project-gallery__item-title">プロジェクトタイトル 2</h4>
                         </div>
                     </div>
-                    <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1749371930388-50c782b0acea?w=750&auto=format&fit=crop&q=80" alt="作品3">
-                        <div class="item-info">
-                            <span class="work-type">アプリ開発</span>
-                            <h4>プロジェクトタイトル 3</h4>
+                    <div class="project-gallery__item">
+                        <img src="https://images.unsplash.com/photo-1749371930388-50c782b0acea?w=750&auto=format&fit=crop&q=80" alt="作品3" class="project-gallery__image">
+                        <div class="project-gallery__info">
+                            <span class="project-gallery__work-type">アプリ開発</span>
+                            <h4 class="project-gallery__item-title">プロジェクトタイトル 3</h4>
                         </div>
                     </div>
-                    <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1749680287741-243118ed6b2c?w=750&auto=format&fit=crop&q=80" alt="作品4">
-                        <div class="item-info">
-                            <span class="work-type">ブランディング</span>
-                            <h4>プロジェクトタイトル 4</h4>
+                    <div class="project-gallery__item">
+                        <img src="https://images.unsplash.com/photo-1749680287741-243118ed6b2c?w=750&auto=format&fit=crop&q=80" alt="作品4" class="project-gallery__image">
+                        <div class="project-gallery__info">
+                            <span class="project-gallery__work-type">ブランディング</span>
+                            <h4 class="project-gallery__item-title">プロジェクトタイトル 4</h4>
                         </div>
                     </div>
                 </div>
@@ -68,9 +68,9 @@
         </div>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Your Name. All Rights Reserved.</p>
+    <footer class="footer">
+        <div class="container footer__container">
+            <p class="footer__text">&copy; 2025 Your Name. All Rights Reserved.</p>
         </div>
     </footer>
 </body>

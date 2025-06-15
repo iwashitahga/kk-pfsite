@@ -11,18 +11,17 @@ body {
 	background-color: #fff;
 }
 
+/* General .container styles, used by header, footer, and page-content */
 .container {
 	width: 90%;
 	max-width: 1200px;
 	margin: auto;
-	overflow: hidden;
-	padding: 0 20px;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+	overflow: hidden; /* Prevent content overflow from breaking layout */
+	padding: 0 20px; /* Horizontal padding */
 }
 
-header {
+/* Header styles */
+.header {
 	background: rgba(0, 0, 0, 0.8);
 	color: #fff;
 	padding: 10px 0;
@@ -32,46 +31,54 @@ header {
 	z-index: 1000;
 }
 
-header h1 {
+.header .container { /* Specific adjustments for header's container */
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.header__title {
 	font-family: "Noto Sans JP", sans-serif;
 	font-size: 1.8em;
 	margin: 0;
 }
 
-header h1 a {
+.header__title-link {
 	color: #fff;
 	text-decoration: none;
 }
 
-header nav {
+.header__nav {
 }
 
-header ul {
+.header__nav-list {
 	list-style: none;
+	margin: 0; /* Ensure no default ul margins */
+	padding: 0; /* Ensure no default ul padding */
 }
 
-header li {
+.header__nav-item {
 	display: inline;
 	padding: 0 15px;
 }
 
-header a {
+.header__nav-link {
 	color: #fff;
 	text-decoration: none;
 	font-size: 1em;
 	font-family: "Noto Sans JP", sans-serif;
 }
 
-header a:hover {
+.header__nav-link:hover {
 	color: #aaa;
 }
 
-.nav-toggle {
+.header__nav-toggle-checkbox {
 	display: none;
 }
 
-.nav-toggle-label {
-	display: none;
+.header__nav-toggle-label {
+	display: none; /* Hidden by default, shown on mobile */
 	position: absolute;
 	top: 25px;
 	right: 20px;
@@ -79,7 +86,7 @@ header a:hover {
 	z-index: 1001;
 }
 
-.nav-toggle-label span {
+.header__nav-toggle-bar {
 	display: block;
 	width: 25px;
 	height: 3px;
@@ -89,7 +96,8 @@ header a:hover {
 	position: relative;
 }
 
-#slideshow-container {
+/* Hero Slideshow styles */
+.hero-slideshow {
 	max-width: 100%;
 	position: relative;
 	margin: 0 auto;
@@ -97,21 +105,26 @@ header a:hover {
 	height: 100vh;
 }
 
-.slide {
+.hero-slideshow__item {
 	display: none;
 	width: 100%;
 	height: 100%;
 	text-align: center;
 }
 
-.slide img {
+.hero-slideshow__item--fade { /* Animation class */
+	animation-name: fade;
+	animation-duration: 1.5s;
+}
+
+.hero-slideshow__image {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
 	vertical-align: middle;
 }
 
-.slide-caption {
+.hero-slideshow__caption {
 	position: absolute;
 	bottom: 20px;
 	left: 50%;
@@ -126,14 +139,13 @@ header a:hover {
 	box-sizing: border-box;
 }
 
-.slide-caption h2 {
+.hero-slideshow__caption-title {
 	font-family: "Noto Sans JP", sans-serif;
 	font-size: 2em;
 	margin-bottom: 0;
 }
 
-.prev,
-.next {
+.hero-slideshow__control {
 	cursor: pointer;
 	position: absolute;
 	top: 50%;
@@ -149,17 +161,21 @@ header a:hover {
 	background-color: rgba(0, 0, 0, 0.3);
 }
 
-.next {
+.hero-slideshow__control--next {
 	right: 0;
 	border-radius: 3px 0 0 3px;
 }
 
-.prev:hover,
-.next:hover {
+.hero-slideshow__control:hover {
 	background-color: rgba(0, 0, 0, 0.8);
 }
 
-.dot {
+.hero-slideshow__dot-navigation {
+    text-align:center; 
+    margin-top: 10px;
+}
+
+.hero-slideshow__dot {
 	cursor: pointer;
 	height: 15px;
 	width: 15px;
@@ -170,16 +186,12 @@ header a:hover {
 	transition: background-color 0.6s ease;
 }
 
-.active,
-.dot:hover {
+.hero-slideshow__dot--active, /* Combined active and hover for dots */
+.hero-slideshow__dot:hover {
 	background-color: #717171;
 }
 
-.fade {
-	animation-name: fade;
-	animation-duration: 1.5s;
-}
-
+/* Animation for slideshow items */
 @keyframes fade {
 	from {
 		opacity: 0.4;
@@ -189,25 +201,32 @@ header a:hover {
 	}
 }
 
-footer {
+/* Footer styles */
+.footer {
 	background: #333;
 	color: #fff;
 	text-align: center;
 	padding: 20px 0;
 }
+/* .footer .container can use the general .container style */
+.footer__text {
+    margin: 0; /* Remove default p margin if any */
+}
 
+
+/* Responsive Design */
 @media (max-width: 768px) {
-	header .container {
-		flex-direction: row;
-		justify-content: space-between;
+	.header .container { /* Header container on mobile */
+		/* flex-direction: row; default */
+		/* justify-content: space-between; default */
 	}
-	header h1 {
+	.header__title { /* Header title on mobile */
 		text-align: left;
 		margin-bottom: 0;
 		font-size: 1.5em;
 	}
 
-	.nav-toggle-label {
+	.header__nav-toggle-label { /* Hamburger icon label */
 		display: block;
 		position: absolute;
 		top: 50%;
@@ -215,11 +234,11 @@ footer {
 		right: 20px;
 	}
 
-	header .container {
+	.header .container { /* Ensure positioning context for toggle label */
 		position: relative;
 	}
 
-	header .main-nav {
+	.header__nav { /* Navigation menu on mobile */
 		display: none;
 		width: 100%;
 		text-align: center;
@@ -227,80 +246,80 @@ footer {
 		padding-top: 10px;
 		position: fixed;
 		left: 0;
-		top: 44px;
+		top: 44px; /* Approx mobile header height */
 		height: calc(100vh - 44px);
 		overflow-y: auto;
 	}
 
-	header .main-nav ul {
+	.header__nav-list { /* Nav list on mobile */
 	}
 
-	header .main-nav li {
+	.header__nav-item { /* Nav items on mobile */
 		display: block;
 		padding: 10px 0;
 	}
 
-	.nav-toggle:checked ~ .main-nav {
+	.header__nav-toggle-checkbox:checked ~ .header__nav { /* Show nav when checked */
 		display: block;
 	}
 
-	.nav-toggle:checked ~ .nav-toggle-label span:nth-child(1) {
+	/* Hamburger to X animation */
+	.header__nav-toggle-checkbox:checked ~ .header__nav-toggle-label .header__nav-toggle-bar:nth-child(1) {
 		transform: rotate(45deg);
 		top: 8px;
 	}
-	.nav-toggle:checked ~ .nav-toggle-label span:nth-child(2) {
+	.header__nav-toggle-checkbox:checked ~ .header__nav-toggle-label .header__nav-toggle-bar:nth-child(2) {
 		opacity: 0;
 	}
-	.nav-toggle:checked ~ .nav-toggle-label span:nth-child(3) {
+	.header__nav-toggle-checkbox:checked ~ .header__nav-toggle-label .header__nav-toggle-bar:nth-child(3) {
 		transform: rotate(-45deg);
 		top: -8px;
 	}
 
-	#slideshow-container {
+	.hero-slideshow { /* Slideshow on mobile */
 		margin-top: 0;
 		height: 100vh;
 	}
 
-	.slide-caption h2 {
+	.hero-slideshow__caption-title { /* Caption title on mobile */
 		font-size: 1.5em;
 	}
-	.prev,
-	.next {
+	.hero-slideshow__control { /* Prev/Next controls on mobile */
 		font-size: 16px;
 		padding: 12px;
 	}
 }
 
-@media (max-width: 480px) {
-	.slide-caption {
+@media (max-width: 480px) { /* Smaller mobile devices */
+	.hero-slideshow__caption {
 		padding: 10px 15px;
 		bottom: 10px;
 	}
-	.slide-caption h2 {
+	.hero-slideshow__caption-title {
 		font-size: 1.2em;
 	}
 }
 
-.modern-chic-content-wrapper {
+/* Page Content (About, Project, Contact) styles */
+.page-content {
 	font-family: "Noto Sans JP", sans-serif;
-	padding-top: 70px;
+	padding-top: 70px; /* Space for fixed header */
 	padding-bottom: 40px;
 	background-color: #fff;
 }
 
-.modern-chic-content-wrapper .container {
+.page-content .container { /* Container within page-content */
 	width: 80%;
 	max-width: 960px;
-	margin: 0 auto;
-	overflow: visible;
-	padding: 0 20px;
-	display: block;
-	align-items: stretch;
-	justify-content: flex-start;
+	/* margin: 0 auto; inherited from .container */
+	overflow: visible; /* Allow content to flow naturally */
+	/* padding: 0 20px; inherited from .container */
+	display: block; /* Override flex from header .container if it was global */
+	align-items: stretch; /* Reset from flex if needed */
+	justify-content: flex-start; /* Reset from flex if needed */
 }
 
-.modern-chic-content-wrapper h2.section-title,
-.modern-chic-content-wrapper h3.section-title {
+.page-content__title { /* Common title for sections within page-content */
 	text-align: center;
 	font-size: 2em;
 	margin-bottom: 30px;
@@ -308,25 +327,26 @@ footer {
 	font-family: "Noto Sans JP", sans-serif;
 }
 
-.modern-chic-content-wrapper #works {
+/* Project Gallery specific styles */
+.project-gallery { /* Was #works */
 	padding: 40px 0;
 	background-color: transparent;
 }
 
-.modern-chic-content-wrapper #works .container {
-	width: 80%;
-	max-width: 960px;
-	padding: 0 20px;
-	margin: 0 auto;
+.project-gallery .container { /* Container specific to project gallery, if needed */
+	/* width: 80%; inherited or can be specific */
+	/* max-width: 960px; inherited or can be specific */
+	/* padding: 0 20px; inherited or can be specific */
+	/* margin: 0 auto; inherited or can be specific */
 }
 
-.modern-chic-content-wrapper .gallery {
+.project-gallery__list {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	gap: 20px;
 }
 
-.modern-chic-content-wrapper .gallery-item {
+.project-gallery__item {
 	width: 100%;
 	overflow: hidden;
 	background: #fff;
@@ -335,19 +355,19 @@ footer {
 	border-radius: 4px;
 }
 
-.modern-chic-content-wrapper .gallery-item img {
+.project-gallery__image {
 	width: 100%;
 	aspect-ratio: 1 / 1;
 	object-fit: cover;
 	display: block;
 }
 
-.modern-chic-content-wrapper .item-info {
+.project-gallery__info {
 	padding: 15px;
 	text-align: left;
 }
 
-.modern-chic-content-wrapper .item-info .work-type {
+.project-gallery__work-type {
 	font-size: 0.85em;
 	color: #555;
 	display: block;
@@ -357,39 +377,40 @@ footer {
 	font-family: "Noto Sans JP", sans-serif;
 }
 
-.modern-chic-content-wrapper .item-info h4 {
+.project-gallery__item-title {
 	font-size: 1.1em;
 	color: #333;
 	margin: 0;
 	font-family: "Noto Sans JP", sans-serif;
 }
 
-.modern-chic-content-wrapper #about-section {
-	padding: 0px 0px 40px 0px;
+/* About Content specific styles */
+.about-content { /* Was #about-section */
+	padding: 0px 0px 40px 0px; /* Adjusted from previous */
 	text-align: center;
 }
-.modern-chic-content-wrapper #about-section p {
+.about-content__text {
 	font-size: 1.1em;
 	color: #555;
 	max-width: 700px;
 	margin: 0 auto 20px auto;
 	line-height: 1.8;
 	font-family: "Noto Sans JP", sans-serif;
-	text-align: left; /* Aboutページの段落を左揃えにする */
+	text-align: left;
 }
 
-.modern-chic-content-wrapper #contact-form-section {
-	padding: 0px 0px 40px 0px;
+/* Contact Form specific styles */
+.contact-form { /* Was #contact-form-section */
+	padding: 0px 0px 40px 0px; /* Adjusted from previous */
 }
 
-.modern-chic-content-wrapper #contact-form-section form {
+.contact-form__form {
 	max-width: 700px;
 	margin: 0 auto;
 }
 
-.modern-chic-content-wrapper #contact-form-section input[type="text"],
-.modern-chic-content-wrapper #contact-form-section input[type="email"],
-.modern-chic-content-wrapper #contact-form-section textarea {
+.contact-form__input,
+.contact-form__textarea {
 	width: 100%;
 	padding: 12px;
 	margin-bottom: 15px;
@@ -400,17 +421,12 @@ footer {
 	background-color: #fff;
 	color: #333;
 }
-.modern-chic-content-wrapper
-	#contact-form-section
-	input[type="text"]::placeholder,
-.modern-chic-content-wrapper
-	#contact-form-section
-	input[type="email"]::placeholder,
-.modern-chic-content-wrapper #contact-form-section textarea::placeholder {
+.contact-form__input::placeholder,
+.contact-form__textarea::placeholder {
 	color: #999;
 }
 
-.modern-chic-content-wrapper #contact-form-section button {
+.contact-form__button {
 	display: inline-block;
 	background: #007bff;
 	color: #fff;
@@ -424,36 +440,33 @@ footer {
 	font-family: "Noto Sans JP", sans-serif;
 }
 
-.modern-chic-content-wrapper #contact-form-section button:hover {
+.contact-form__button:hover {
 	background-color: #0056b3;
 }
 
+/* Responsive adjustments for page-content */
 @media (max-width: 768px) {
-	.modern-chic-content-wrapper {
+	.page-content {
 		padding-top: 60px;
 	}
-	.modern-chic-content-wrapper .container {
-		width: 100%;
-		padding: 0;
-		margin: 0;
+	.page-content .container { /* Page content container on mobile */
+		width: 100%; /* Full width */
+		padding: 0; /* No horizontal padding */
+		margin: 0; /* No auto margin */
 	}
-	.modern-chic-content-wrapper .gallery {
-		grid-template-columns: 1fr;
+	.project-gallery__list { /* Gallery list on mobile */
+		grid-template-columns: 1fr; /* Single column */
 	}
 
-	.modern-chic-content-wrapper #works {
-		padding: 0;
+	.project-gallery { /* Project gallery section on mobile */
+		padding: 0; /* No padding */
 	}
-	.modern-chic-content-wrapper #works .container {
-		width: 100%;
-		max-width: 100%;
-		padding: 0;
-		margin: 0;
-	}
-	.modern-chic-content-wrapper #works .gallery {
+	/* .project-gallery .container specific mobile styles are covered by .page-content .container */
+	
+	.project-gallery__list { /* Ensure gallery within #works also has no gap */
 		gap: 0;
 	}
-	.modern-chic-content-wrapper #works .gallery-item {
+	.project-gallery__item { /* Gallery items on mobile */
 		margin-bottom: 0;
 		border: none;
 		border-radius: 0;
