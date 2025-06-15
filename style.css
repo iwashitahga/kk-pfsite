@@ -343,6 +343,8 @@ body {
 	/* Common title for sections within page-content */
 	text-align: center;
 	font-size: 2em;
+	font-weight: 700; /* フォントの太さを明示的に指定 (bold) */
+	line-height: 1.4; /* 行の高さを明示的に指定 */
 	margin-top: 40px; /* 上部の余白を追加 */
 	margin-bottom: 20px; /* 下部の余白を調整 */
 	color: #333;
