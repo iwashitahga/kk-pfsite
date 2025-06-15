@@ -369,6 +369,7 @@ footer {
 	margin: 0 auto 20px auto;
 	line-height: 1.8;
 	font-family: "Zen Kaku Gothic New", sans-serif;
+	text-align: left; /* Aboutページの段落を左揃えにする */
 }
 
 .modern-chic-content-wrapper #contact-form-section {
