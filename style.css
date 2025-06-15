@@ -243,7 +243,7 @@ footer {
 		display: none;
 		width: 100%;
 		text-align: center;
-		background: rgba(0, 0, 0, 0.8); /* Match header background */
+		background: rgb(25, 25, 25); /* Opaque background to prevent color blending */
 		padding-top: 10px; /* Add some padding */
 		position: fixed; /* Ensure it covers content below header */
 		left: 0;
@@ -343,23 +343,29 @@ footer {
 
 /* Project Page (#works section) */
 .modern-chic-content-wrapper #works {
-	padding: 40px 0;
-	background-color: #f4f4f4; /* Original modern-chic background for works section */
+	padding: 0; /* Remove top/bottom padding if items are full width */
+	background-color: transparent; /* Remove background color */
+}
+
+.modern-chic-content-wrapper #works .container { /* Override container for full width */
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
 }
 
 .modern-chic-content-wrapper .gallery {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr); /* 3 columns for PC */
-	gap: 20px;
+	gap: 0; /* Remove gap for full width items */
 }
 
 .modern-chic-content-wrapper .gallery-item {
 	width: 100%;
 	overflow: hidden;
-	background: #fff; /* Item background */
-	margin-bottom: 20px;
-	border: 1px solid #eee;
-	border-radius: 4px;
+	background: #fff; /* Item background, can be transparent if image covers all */
+	margin-bottom: 0; /* Remove margin for seamless items */
+	border: none; /* Remove border */
+	border-radius: 0; /* Remove border-radius */
 }
 
 .modern-chic-content-wrapper .gallery-item img {
@@ -464,8 +470,7 @@ footer {
         grid-template-columns: 1fr; /* Single column for gallery on mobile */
     }
     .modern-chic-content-wrapper .gallery-item {
-        border: none; /* Remove border on mobile as per previous request */
-        margin-bottom: 0; 
-        border-radius: 0;
+        /* Styles for mobile gallery items are already border:none, margin-bottom:0, border-radius:0 */
+        /* No changes needed here if PC styles are now also borderless/marginless */
     }
 }
