@@ -312,7 +312,7 @@ footer {
 	width: 80%;
 	max-width: 960px;
 	padding: 0 20px;
-    margin: 0 auto;
+	margin: 0 auto;
 }
 
 .modern-chic-content-wrapper .gallery {
@@ -360,7 +360,7 @@ footer {
 }
 
 .modern-chic-content-wrapper #about-section {
-	padding: 40px 0;
+	padding: 0px 0px 40px 0px;
 	text-align: center;
 }
 .modern-chic-content-wrapper #about-section p {
