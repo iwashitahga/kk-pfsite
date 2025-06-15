@@ -113,3 +113,78 @@
 </body>
 </html>
 
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新しいポートフォリオサイト</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>My Portfolio</h1>
+            <input type="checkbox" id="slideshow-nav-toggle" class="nav-toggle">
+            <label for="slideshow-nav-toggle" class="nav-toggle-label">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about/">About</a></li>
+                    <li><a href="/project/">Project</a></li>
+                    <li><a href="/contact/">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="slideshow-container">
+            <div class="slide fade">
+                <img src="https://images.unsplash.com/photo-1749680287741-243118ed6b2c?w=1200&auto=format&fit=crop&q=80" alt="作品1">
+                <div class="slide-caption">
+                    <h2>プロジェクトタイトル 1</h2>
+                </div>
+            </div>
+
+            <div class="slide fade">
+                <img src="https://images.unsplash.com/photo-1742836531212-c55044926fbd?w=1200&auto=format&fit=crop&q=80" alt="作品2">
+                <div class="slide-caption">
+                    <h2>プロジェクトタイトル 2</h2>
+                </div>
+            </div>
+
+            <div class="slide fade">
+                <img src="https://images.unsplash.com/photo-1749371930388-50c782b0acea?w=1200&auto=format&fit=crop&q=80" alt="作品3">
+                <div class="slide-caption">
+                    <h2>プロジェクトタイトル 3</h2>
+                </div>
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </section>
+
+        <div style="text-align:center; margin-top: 10px;">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Your Name. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - My Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>My Portfolio</h1>
+            <input type="checkbox" id="slideshow-nav-toggle" class="nav-toggle">
+            <label for="slideshow-nav-toggle" class="nav-toggle-label">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about/">About</a></li>
+                    <li><a href="/project/">Project</a></li>
+                    <li><a href="/contact/">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="modern-chic-content-wrapper">
+        <div class="container">
+            <section id="contact-form-section">
+                <h2 class="section-title">Get In Touch</h2>
+                <form action="#" method="POST">
+                    <input type="text" name="name" placeholder="お名前" required>
+                    <input type="email" name="email" placeholder="メールアドレス" required>
+                    <textarea name="message" rows="6" placeholder="メッセージ内容" required></textarea>
+                    <button type="submit">送信</button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Your Name. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
