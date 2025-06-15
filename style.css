@@ -413,7 +413,7 @@ body {
 /* About Content specific styles */
 .about-content {
 	/* Was #about-section */
-	padding: 40px 0px; /* Adjusted from previous */
+	padding: 0px 0px 40px 0px; /* Adjusted from previous */
 	text-align: center;
 }
 .about-content__text {
@@ -429,7 +429,7 @@ body {
 /* Contact Form specific styles */
 .contact-form {
 	/* Was #contact-form-section */
-	padding: 40px 0px; /* Adjusted from previous */
+	padding: 0px 0px 40px 0px; /* Adjusted from previous */
 }
 
 .contact-form__form {
