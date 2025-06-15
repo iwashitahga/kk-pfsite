@@ -426,50 +426,34 @@ body {
 	text-align: left;
 }
 
-/* Contact Form specific styles */
-.contact-form {
-	/* Was #contact-form-section */
-	padding: 0px 0px 40px 0px; /* Adjusted from previous */
+/* Contact Info specific styles */
+.contact-info {
+	padding: 0px 0px 40px 0px;
+	text-align: center; /* 中央揃えにする */
 }
 
-.contact-form__form {
+.contact-info__links {
 	max-width: 700px;
-	margin: 0 auto;
+	margin: 20px auto 0; /* タイトルからのマージンと中央揃え */
+	text-align: left; /* リンク自体は左揃え */
+	display: inline-block; /* 中央揃えのためのブロック化 */
 }
 
-.contact-form__input,
-.contact-form__textarea {
-	width: 100%;
-	padding: 12px;
-	margin-bottom: 15px;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	font-family: "Noto Sans JP", sans-serif;
-	font-size: 1em;
-	background-color: #fff;
+.contact-info__item {
+	font-size: 1.1em;
 	color: #333;
-}
-.contact-form__input::placeholder,
-.contact-form__textarea::placeholder {
-	color: #999;
+	margin-bottom: 15px; /* 各連絡先アイテム間の余白 */
+	line-height: 1.8;
 }
 
-.contact-form__button {
-	display: inline-block;
-	background: #007bff;
-	color: #fff;
-	padding: 12px 25px;
+.contact-info__link {
+	color: #007bff; /* リンクの色 */
 	text-decoration: none;
-	border-radius: 5px;
 	font-weight: bold;
-	transition: background-color 0.3s ease;
-	border: none;
-	cursor: pointer;
-	font-family: "Noto Sans JP", sans-serif;
 }
 
-.contact-form__button:hover {
-	background-color: #0056b3;
+.contact-info__link:hover {
+	text-decoration: underline;
 }
 
 /* Responsive adjustments for page-content */
